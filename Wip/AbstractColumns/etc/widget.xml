@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget class="Wip\AbstractColumns\Block\Widget\AbstractColumnsWidget" id="wip_AbstractColums_AbstractColumnsWidget">
+		<label>Wip Abstract Fieldset</label>
+		<description></description>
+		<parameters>
+			<parameter name="title"  visible="true" xsi:type="text" sort_order="1">
+				<label>Title</label>
+			</parameter>
+			<parameter name="description" visible="true" xsi:type="block" sort_order="2">
+				<label>Description</label>
+				<block class="Wip\AbstractColumns\Block\Adminhtml\Widget\Editor" />
+			</parameter>
+			<parameter name="alignment" source_model="Wip\AbstractColumns\Model\Config\Source\Alignments" visible="true" xsi:type="select"  sort_order="3" >
+				<label translate="true">Text Position</label>
+			</parameter>
+			<parameter name="bgcolor"  visible="true" xsi:type="text" sort_order="4">
+				<label>Background Color</label>
+			</parameter>
+			<parameter name="image" xsi:type="block" required="true" visible="true" sort_order="5">
+				<label translate="true">Image</label>
+				<block class="Wip\AbstractColumns\Block\Adminhtml\Widget\ImageChooser">
+					<data>
+						<item name="button" xsi:type="array">
+							<item name="open" xsi:type="string">Choose...</item>
+						</item>
+					</data>
+				</block>
+			</parameter>
+			<parameter name="ctaLink"  visible="true" xsi:type="text" sort_order="6">
+				<label>Cta Link</label>
+			</parameter>
+			<parameter name="ctaLabel"  visible="true" xsi:type="text" sort_order="7">
+				<label>Cta Label</label>
+			</parameter>
+		</parameters>
+		
+	</widget>
+</widgets>

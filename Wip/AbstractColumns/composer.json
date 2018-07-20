@@ -1,0 +1,21 @@
+{
+    "name": "wip/module-abstractcolums",
+    "description": "Create Custom Widget for Magento2",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "email": "diego@wipitalia.it",
+            "name": "Diego Merello"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Wip\\AbstractColumns\\": ""
+        }
+    }
+}

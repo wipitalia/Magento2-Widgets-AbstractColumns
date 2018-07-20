@@ -1,0 +1,31 @@
+<?php
+    $alignmentClass = ($block->getData('alignment')) ? "wip-abstract-columns--".$block->getData('alignment') : 'wip-abstract-columns--left';
+?>
+<div class="wip-widget wip-abstract-columns <?php echo $alignmentClass; ?>" style="background-color: <?=$block->getData('bgcolor')?>">
+    <div class="wip-abstract-columns__column wip-abstract-columns__column--imagewrp">
+        <?php if ($block->getData('image')): ?>
+            <figure class='wip-abstract-columns__image'>
+                <img src="<?= $block->getData('image'); ?>">
+            </figure>
+        <?php endif; ?>
+    </div>
+    <div class="wip-abstract-columns__column wip-abstract-columns__column--contentwrp">
+        <div class="wip-abstract-columns__content">
+            <?php if ($block->getData('title')): ?>
+                <div class='wip-abstract-columns__content__title'>
+                    <?= $block->getData('title'); ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($block->getData('description')): ?>
+                <div class='wip-abstract-columns__content__description'>
+                    <?= $block->getData('description'); ?>
+                </div>
+            <?php endif; ?>
+            <?php if ($block->getData('ctaLink') && $block->getData('ctaLabel')): ?>
+                <a href="<?=$block->getData('ctaLink')?>" class="action primary" title="<?=$block->getData('ctaLabel')?>" >
+                    <span><?=$block->getData('ctaLabel')?></span>
+                </a>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>

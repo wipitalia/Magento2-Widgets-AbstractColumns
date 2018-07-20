@@ -1,0 +1,101 @@
+
+
+// Common
+// (for styles used in both mobile and desktop views)
+& when (@media-common = true) {
+
+  .wip-abstract-columns {
+    width: 100%;
+
+    > * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    &__column {
+      position: relative;
+    }
+
+    &__content {
+      padding: 4em;
+      &__title {
+        line-height: 1.1;
+        margin-bottom: 1em;
+        font-size: 2.6rem;
+      }
+      .action.primary {
+        margin-top: 2em;
+      }
+    }
+
+    &__image {
+      line-height: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+
+// Desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+  .wip-abstract-columns {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: columns wrap;
+    -ms-flex-flow: columns wrap;
+    flex-flow: columns wrap;
+
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    // IE 11 requires a unit to be added to the third argument, the flex-basis property
+    flex-basis: 50%;
+    // to check:
+    // In IE10 and IE11, containers with display: flex and flex-direction: column will not properly calculate their flexed childrens' sizes if the container has min-height but no explicit height property.
+    // IE 11 does not vertically align items correctly when min-height is used
+
+    &__column {
+      width: 50%;
+      &--imagewrp {
+        align-self: flex-start;
+      }
+    }
+
+
+    &--left {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+  }
+
+}
+
+// Mobile
+// (for all mobile styles.)
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .wip-abstract-columns {
+    &__content {
+      padding: 3em;
+    }
+    &__column {
+      & + &__column {
+        margin-top: 2em;
+      }
+    }
+  }
+}
+
+// Tablet
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
