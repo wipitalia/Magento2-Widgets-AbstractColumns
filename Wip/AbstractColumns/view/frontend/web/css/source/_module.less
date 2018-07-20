@@ -7,6 +7,15 @@
   .wip-abstract-columns {
     width: 100%;
 
+
+    &--bright .wip-abstract-columns__content {
+      color: white;
+      .action.primary {
+        background-color: white;
+        color: black;
+      }
+    }
+
     > * {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -59,9 +68,12 @@
     align-items: center;
     // IE 11 requires a unit to be added to the third argument, the flex-basis property
     flex-basis: 50%;
-    // to check:
-    // In IE10 and IE11, containers with display: flex and flex-direction: column will not properly calculate their flexed childrens' sizes if the container has min-height but no explicit height property.
-    // IE 11 does not vertically align items correctly when min-height is used
+
+    &--left {
+      -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+    }
 
     &__column {
       width: 50%;
@@ -70,12 +82,6 @@
       }
     }
 
-
-    &--left {
-        -webkit-flex-direction: row-reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-    }
   }
 
 }
