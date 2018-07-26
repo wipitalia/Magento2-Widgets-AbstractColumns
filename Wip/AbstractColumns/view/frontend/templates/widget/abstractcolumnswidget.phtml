@@ -3,13 +3,13 @@
     $contentColorSetClass = ($block->getData('contentcolorset')) ? "wip-abstract-columns--".$block->getData('contentcolorset') : 'wip-abstract-columns--dark';
 ?>
 <div class="wip-widget wip-abstract-columns <?php echo $alignmentClass; ?> <?php echo $contentColorSetClass; ?>" style="background-color: <?=$block->getData('bgcolor')?>">
+    <?php if ($block->getData('image')): ?>
     <div class="wip-abstract-columns__column wip-abstract-columns__column--imagewrp">
-        <?php if ($block->getData('image')): ?>
             <figure class='wip-abstract-columns__image'>
                 <img src="<?= $block->getData('image'); ?>">
             </figure>
-        <?php endif; ?>
     </div>
+    <?php endif; ?>
     <div class="wip-abstract-columns__column wip-abstract-columns__column--contentwrp">
         <div class="wip-abstract-columns__content">
             <?php if ($block->getData('title')): ?>
